@@ -25004,10 +25004,12 @@ Rolling tabindex datepicker
     	else
     		da = new Date();
     	
+    	
     	da.setHours(12);
     	daString = da.toISOString().slice(0,10);
     	this.generateDays(daString);
 
+    	//Always clear the calendar of old content
     	this.generateCalendarTable();
     	this.generateCalendarHeader();
     	this.generateKeyboardHelp();
@@ -25369,16 +25371,11 @@ Rolling tabindex datepicker
 		var $currently_active = $(".active");
 		var $newActiveCell = cell;
 		//Clean up previously selected cell
-		$currently_active
-			.removeClass("active")
-			.attr('tabindex', -1)
-			.removeAttr("aria-pressed")
-			.removeAttr("aria-live");
+		$currently_active.removeClass("active").attr('tabindex', -1).removeAttr("aria-pressed");
 		this.setAriaLabel($currently_active);
 
 		//Update the new active cell
 		$newActiveCell
-			.attr("aria-live", "assertive")
 			.addClass("active")
 			.attr("tabindex", "0")
 			.attr("aria-pressed", true)
