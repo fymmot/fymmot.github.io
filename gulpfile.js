@@ -28,6 +28,8 @@ var config = {
     'node_modules/parsleyjs/dist/parsley.min.js',
     'node_modules/what-input/dist/what-input.min.js',
     'node_modules/prismjs/prism.js',
+    'node_modules/chrono-node/chrono.min.js',
+    'node_modules/moment/moment.js',
     'src/js/**/*.js'
     ],
   imgin: 'src/img/**/*.{jpg,jpeg,png,gif}',
