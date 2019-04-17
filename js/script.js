@@ -29942,7 +29942,6 @@ Rolling tabindex datepicker
 					.addClass("error")
 					.attr("aria-describedby", "date-error");
 			$("#date-error").removeClass("hidden");
-			$("#date-hint").addClass("hidden");
 
 			return;
 
@@ -29951,9 +29950,8 @@ Rolling tabindex datepicker
 		function setValid() {
 			console.log("Setting valid")
 
-			that.$target.removeClass("error").attr("aria-describedby", "date-hint");
+			that.$target.removeClass("error").removeAttr("aria-describedby");
 			$("#date-error").addClass("hidden");
-			$("#date-hint").removeClass("hidden");
 		}
 
 		function checkInput() {
@@ -29998,7 +29996,7 @@ Rolling tabindex datepicker
 
 		this.$target.change(function(){
 
-			if (checkInput() == false && this.$target.val().length){
+			if (checkInput() == false && that.$target.val().length){
 				setInvalid();
 				this.$target.val("");
 			}
